@@ -7,12 +7,24 @@
 //
 
 import Foundation
+import KakaJSON
 
-struct Repository {
-    var id : Int
-    var fullName : String
+struct Repository: Convertible{
+    var id : Int = 0
+    var fullName : String = ""
     var description : String?
     var stargazersCount : Int = 0
     var language : String?
-    var owner : User
+    var owner : User?
+    
+    func kj_modelKey(from property: Property) -> ModelPropertyKey {
+//        if property.name == "name" { return "login" }
+//        return property.name
+        return property.name.kj.underlineCased()
+    }
+    
+    func kk_modelKey(from property: Property) -> ModelPropertyKey {
+        if property.name == "name" { return "login" }
+        return property.name
+    }
 }

@@ -7,9 +7,15 @@
 //
 
 import Foundation
+import KakaJSON
 
-struct User {
-    var id : Int
-    var login : String
-    var avatarUrl : String
+struct User : Convertible{
+    
+    var id : Int = 0
+    var login : String?
+    var avatarUrl : String?
+    
+    func kj_modelKey(from property: Property) -> ModelPropertyKey {
+        return property.name.kj.underlineCased()
+    }
 }

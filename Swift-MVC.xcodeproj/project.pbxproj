@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC37BBBB2433DF3B00340BEA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC37BBBA2433DF3B00340BEA /* API.swift */; };
+		AC37BBBE2433E1D500340BEA /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AC37BBBD2433E1D500340BEA /* SwiftyJSON */; };
+		AC37BBC12433E6D100340BEA /* KakaJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AC37BBC02433E6D100340BEA /* KakaJSON */; };
 		AC3CEDF32432EE5600CEE1EC /* RepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CEDF22432EE5600CEE1EC /* RepositoryPresenter.swift */; };
 		AC51D2252431E19300EEC9D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51D2242431E19300EEC9D2 /* AppDelegate.swift */; };
 		AC51D2272431E19300EEC9D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51D2262431E19300EEC9D2 /* SceneDelegate.swift */; };
@@ -40,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC37BBBA2433DF3B00340BEA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		AC3CEDF22432EE5600CEE1EC /* RepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryPresenter.swift; sourceTree = "<group>"; };
 		AC51D2212431E19300EEC9D2 /* Swift-MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-MVC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC51D2242431E19300EEC9D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC37BBBE2433E1D500340BEA /* SwiftyJSON in Frameworks */,
 				ACB0836C2432FC43002BC430 /* Alamofire in Frameworks */,
+				AC37BBC12433E6D100340BEA /* KakaJSON in Frameworks */,
 				AC59937224331D6800E4EEC2 /* PackageTestLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC37BBB92433DF2300340BEA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AC37BBBA2433DF3B00340BEA /* API.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		AC3CEDF12432EE2E00CEE1EC /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +135,7 @@
 		AC51D2232431E19300EEC9D2 /* Swift-MVC */ = {
 			isa = PBXGroup;
 			children = (
+				AC37BBB92433DF2300340BEA /* Services */,
 				AC3CEDF12432EE2E00CEE1EC /* Presenters */,
 				AC51D2572431E67500EEC9D2 /* Views */,
 				AC51D2562431E66B00EEC9D2 /* Models */,
@@ -196,6 +211,8 @@
 			packageProductDependencies = (
 				ACB0836B2432FC43002BC430 /* Alamofire */,
 				AC59937124331D6800E4EEC2 /* PackageTestLibrary */,
+				AC37BBBD2433E1D500340BEA /* SwiftyJSON */,
+				AC37BBC02433E6D100340BEA /* KakaJSON */,
 			);
 			productName = "Swift-MVC";
 			productReference = AC51D2212431E19300EEC9D2 /* Swift-MVC.app */;
@@ -273,6 +290,8 @@
 			packageReferences = (
 				ACB0836A2432FC43002BC430 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				AC59937024331D6800E4EEC2 /* XCRemoteSwiftPackageReference "PackageTestLibrary" */,
+				AC37BBBC2433E1D500340BEA /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				AC37BBBF2433E6D100340BEA /* XCRemoteSwiftPackageReference "KakaJSON" */,
 			);
 			productRefGroup = AC51D2222431E19300EEC9D2 /* Products */;
 			projectDirPath = "";
@@ -323,6 +342,7 @@
 				AC51D2272431E19300EEC9D2 /* SceneDelegate.swift in Sources */,
 				AC51D25C2431E6C700EEC9D2 /* User.swift in Sources */,
 				AC51D25A2431E6B900EEC9D2 /* Repository.swift in Sources */,
+				AC37BBBB2433DF3B00340BEA /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,6 +678,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AC37BBBC2433E1D500340BEA /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		AC37BBBF2433E6D100340BEA /* XCRemoteSwiftPackageReference "KakaJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:kakaopensource/KakaJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.2;
+			};
+		};
 		AC59937024331D6800E4EEC2 /* XCRemoteSwiftPackageReference "PackageTestLibrary" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/zhuli8com/PackageTestLibrary.git";
@@ -677,6 +713,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AC37BBBD2433E1D500340BEA /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC37BBBC2433E1D500340BEA /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		AC37BBC02433E6D100340BEA /* KakaJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC37BBBF2433E6D100340BEA /* XCRemoteSwiftPackageReference "KakaJSON" */;
+			productName = KakaJSON;
+		};
 		AC59937124331D6800E4EEC2 /* PackageTestLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AC59937024331D6800E4EEC2 /* XCRemoteSwiftPackageReference "PackageTestLibrary" */;
