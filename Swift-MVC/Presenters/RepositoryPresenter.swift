@@ -13,19 +13,26 @@ import SwiftyJSON
 import KakaJSON
 import UIKit
 
+typealias ResponseSuccess = (_ response: [Convertible]) -> Void
+typealias ResponseFail = (_ error: Error) -> Void
+
 class RepositoryPresenter {
-    lazy var repositories: [Repository]? = [Repository]()
     
-    func getRepositories() -> Void {
-        AF.request(API.getrepositoriesAPI).responseJSON(completionHandler: { [weak self] (response) in
+    func getRepositories(success: @escaping ResponseSuccess, failure: @escaping ResponseFail) -> Void {
+        
+        AF.request(API.getrepositoriesAPI).responseJSON(completionHandler: { (response) in
             switch response.result{
             case .success(let value):
                 guard let items = JSON(value)["items"].arrayObject else {
                     return
                 }
-                self?.repositories = items.kj.modelArray(type: Repository.self) as? [Repository]
-                debugPrint(JSON(value)["items"].arrayObject!)
+                guard let models = items.kj.modelArray(type: Repository.self) as? [Repository] else {
+                    return
+                }
+                success(models)
+                debugPrint(models)
             case .failure(let error):
+                failure(error)
                 debugPrint(error)
                 return
             }

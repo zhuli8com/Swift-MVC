@@ -13,7 +13,7 @@ import KakaJSON
 import SwiftyJSON
 
 class ViewController: UIViewController {
-//    var presenter = RepositoryPresenter()
+    var presenter = RepositoryPresenter()
     
     //MARK: - 属性
     let cellID = "cell"
@@ -38,7 +38,16 @@ class ViewController: UIViewController {
         //1.创建tableview，并添加到控制器的view
         view.addSubview(tableView)
         
-        getRepositories()
+//        getRepositories()
+        presenter.getRepositories(success: { [weak self] (models) in
+            guard let items = models as? [Repository] else {
+                return
+            }
+            self?.repositories = items
+            self?.tableView.reloadData()
+        }) { (error) in
+            
+        }
     }
     
     func getRepositories() -> Void {
@@ -48,7 +57,10 @@ class ViewController: UIViewController {
                 guard let items = JSON(value)["items"].arrayObject else {
                     return
                 }
-                self?.repositories = items.kj.modelArray(type: Repository.self) as! [Repository]
+                guard let modles = items.kj.modelArray(type: Repository.self) as? [Repository] else {
+                    return
+                }
+                self?.repositories = modles
                 debugPrint(JSON(value)["items"].arrayObject!)
             case .failure(let error):
                 debugPrint(error)
