@@ -8,13 +8,10 @@
 
 import UIKit
 import Foundation
-import Alamofire
-import KakaJSON
-import SwiftyJSON
 
 class ViewController: UIViewController {
     var presenter = RepositoryPresenter()
-    
+
     //MARK: - 属性
     let cellID = "cell"
     private lazy var tableView: UITableView = {
@@ -24,7 +21,7 @@ class ViewController: UIViewController {
         table.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         return table
     }()
-    
+
     var repositories:[Repository] = [Repository](){
         didSet{
             tableView.reloadData()
@@ -34,10 +31,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+
         //1.创建tableview，并添加到控制器的view
         view.addSubview(tableView)
-        
+
 //        getRepositories()
         presenter.getRepositories(success: { [weak self] (models) in
             guard let items = models as? [Repository] else {
@@ -46,12 +43,12 @@ class ViewController: UIViewController {
             self?.repositories = items
             self?.tableView.reloadData()
         }) { (error) in
-            
+
         }
     }
-    
+
     func getRepositories() -> Void {
-        AF.request(API.getrepositoriesAPI).responseJSON(completionHandler: { [weak self] (response) in
+        request(API.getrepositoriesAPI).responseJSON(completionHandler: { [weak self] (response) in
             switch response.result{
             case .success(let value):
                 guard let items = JSON(value)["items"].arrayObject else {

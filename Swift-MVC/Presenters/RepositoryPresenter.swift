@@ -7,11 +7,6 @@
 //
 
 import Foundation
-import Alamofire
-import PackageTestLibrary
-import SwiftyJSON
-import KakaJSON
-import UIKit
 
 typealias ResponseSuccess = (_ response: [Convertible]) -> Void
 typealias ResponseFail = (_ error: Error) -> Void
@@ -20,7 +15,7 @@ class RepositoryPresenter {
     
     func getRepositories(success: @escaping ResponseSuccess, failure: @escaping ResponseFail) -> Void {
         
-        AF.request(API.getrepositoriesAPI).responseJSON(completionHandler: { (response) in
+        request(API.getrepositoriesAPI).responseJSON(completionHandler: { (response) in
             switch response.result{
             case .success(let value):
                 guard let items = JSON(value)["items"].arrayObject else {

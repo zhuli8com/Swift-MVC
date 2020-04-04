@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-Swift-MVC/Pods-Swift-MVC-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/KakaJSON/KakaJSON.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
