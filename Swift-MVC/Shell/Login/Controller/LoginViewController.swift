@@ -6,7 +6,7 @@
 //  Copyright © 2020 lizhu. All rights reserved.
 //
 
-class LoginViewController: BaseViewController {
+class LoginViewController: BaseViewController,ValidatesPhoneNumber,ValidatesPassword {
     //logo
     private let logoView = UIImageView(image: R.image.logo())
     //手机号
@@ -24,7 +24,7 @@ class LoginViewController: BaseViewController {
         return phoneTextField
     }()
     //密码
-    lazy private var passwordTextFiled:UITextField = {
+    lazy private var passwordTextField:UITextField = {
         let passwordIconView = UIImageView(image: R.image.icon_pwd())
         let textFiled = UITextField()
         textFiled.leftView = passwordIconView
@@ -70,8 +70,8 @@ class LoginViewController: BaseViewController {
             make.height.equalTo(50)
         }
         
-        view.addSubview(passwordTextFiled)
-        passwordTextFiled.snp.makeConstraints { (make) in
+        view.addSubview(passwordTextField)
+        passwordTextField.snp.makeConstraints { (make) in
             make.left.equalTo(phoneTextField)
             make.right.equalTo(phoneTextField)
             make.top.equalTo(phoneTextField.snp_bottom).offset(15)
@@ -80,19 +80,28 @@ class LoginViewController: BaseViewController {
         
         view.addSubview(loginButton)
         loginButton.snp.makeConstraints { (make) in
-            make.left.equalTo(passwordTextFiled)
-            make.right.equalTo(passwordTextFiled)
-            make.top.equalTo(passwordTextFiled.snp_bottom).offset(20)
-            make.height.equalTo(passwordTextFiled.snp_height)
+            make.left.equalTo(passwordTextField)
+            make.right.equalTo(passwordTextField)
+            make.top.equalTo(passwordTextField.snp_bottom).offset(20)
+            make.height.equalTo(passwordTextField.snp_height)
         }
     }
     
     // MARK: - event response
     @objc func didClickLoginButton() {
-//        if validatePhoneNumber(phoneTextField.text ?? "") && validatePassword(passwordTextField.text ?? "") {
-//
-//        } else {
-//            self.showToast()
-//        }
+        if validatePhoneNumber(phoneTextField.text ?? "") && validatePassword(passwordTextField.text ?? "") {
+
+        } else {
+            self.showToast()
+        }
+    }
+    
+    //MARK: - private methods
+    func showToast() {
+        let alertVC = UIAlertController(title: "提示", message: "用户名或密码错误", preferredStyle: .alert)
+        present(alertVC, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
+            alertVC.dismiss(animated: true, completion: nil)
+        }
     }
 }
