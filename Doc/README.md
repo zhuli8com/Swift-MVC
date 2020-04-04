@@ -1,4 +1,12 @@
+# 删除 Xcode 11创建工程多出的Scenedelegate
+
+1. 删除Scenedelegate
+2. 删除Info.plist文件中的Application Scene Manifest配置
+3. 删除AppDelegate文件中的两个管理Scenedelegate生命周期代理方法
+4. 在AppDelegate中添加window属性
+
 #  API
+
 https://api.github.com/search/repositories?q=SwiftUI&order=desc
 
 # 数据结构

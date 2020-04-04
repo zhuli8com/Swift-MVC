@@ -9,7 +9,8 @@ target 'Swift-MVC' do
     pod 'KakaJSON', '~> 1.1.2'
     pod 'Alamofire'
     pod 'SwiftyJSON', '~> 4.0'
-    
+    pod "R.swift"
+    pod 'SnapKit'
   target 'Swift-MVCTests' do
     inherit! :search_paths
     # Pods for testing
