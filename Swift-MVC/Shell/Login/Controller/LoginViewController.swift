@@ -6,7 +6,15 @@
 //  Copyright © 2020 lizhu. All rights reserved.
 //
 
-class LoginViewController: BaseViewController,ValidatesPhoneNumber,ValidatesPassword {
+class LoginViewController: BaseViewController, LoginViewModelDelegate {
+    
+    lazy var loginViewModel: LoginViewModel = {
+        let loginVM: LoginViewModel = LoginViewModel()
+        loginVM.delegate = self
+        return loginVM
+    }()
+    
+    
     //logo
     private let logoView = UIImageView(image: R.image.logo())
     //手机号
@@ -89,18 +97,14 @@ class LoginViewController: BaseViewController,ValidatesPhoneNumber,ValidatesPass
     
     // MARK: - event response
     @objc func didClickLoginButton() {
-        if validatePhoneNumber(phoneTextField.text ?? "") && validatePassword(passwordTextField.text ?? "") {
-
-        } else {
-            self.showToast()
-        }
+        loginViewModel.loginAction(phoneTextField:phoneTextField,passwordTextField:passwordTextField)
     }
     
-    //MARK: - private methods
+    //MARK: - LoginViewModelDelegate
     func showToast() {
         let alertVC = UIAlertController(title: "提示", message: "用户名或密码错误", preferredStyle: .alert)
         present(alertVC, animated: true, completion: nil)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1.5) {
             alertVC.dismiss(animated: true, completion: nil)
         }
     }

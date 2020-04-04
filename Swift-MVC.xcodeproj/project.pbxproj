@@ -44,8 +44,6 @@
 		AC51D25C2431E6C700EEC9D2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51D25B2431E6C700EEC9D2 /* User.swift */; };
 		AC57565C243865D5002FCF9B /* ValidatesPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57565B243865D5002FCF9B /* ValidatesPhoneNumber.swift */; };
 		AC57565E243866BF002FCF9B /* ValidatesPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57565D243866BF002FCF9B /* ValidatesPassword.swift */; };
-		ACEAFF322436AA3400B976D4 /* LoginViewController_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEAFF312436AA3400B976D4 /* LoginViewController_1.swift */; };
-		ACEAFF342436AB2B00B976D4 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEAFF332436AB2B00B976D4 /* LoginViewController.storyboard */; };
 		ACEAFF362436AC5C00B976D4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEAFF352436AC5C00B976D4 /* LoginViewModel.swift */; };
 		ACEAFF382436AFF000B976D4 /* LoginViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEAFF372436AFF000B976D4 /* LoginViewModelDelegate.swift */; };
 		E8953D8A08E910147C4F997F /* Pods_Swift_MVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDA711B556568AD33469AF6 /* Pods_Swift_MVC.framework */; };
@@ -119,8 +117,6 @@
 		AC51D25B2431E6C700EEC9D2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AC57565B243865D5002FCF9B /* ValidatesPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatesPhoneNumber.swift; sourceTree = "<group>"; };
 		AC57565D243866BF002FCF9B /* ValidatesPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatesPassword.swift; sourceTree = "<group>"; };
-		ACEAFF312436AA3400B976D4 /* LoginViewController_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController_1.swift; sourceTree = "<group>"; };
-		ACEAFF332436AB2B00B976D4 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		ACEAFF352436AC5C00B976D4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		ACEAFF372436AFF000B976D4 /* LoginViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelDelegate.swift; sourceTree = "<group>"; };
 		F65D9DDD6AA78782AEC985CE /* Pods_Swift_MVC_Swift_MVCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_MVC_Swift_MVCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -326,6 +322,8 @@
 			isa = PBXGroup;
 			children = (
 				ACEAFF372436AFF000B976D4 /* LoginViewModelDelegate.swift */,
+				AC57565B243865D5002FCF9B /* ValidatesPhoneNumber.swift */,
+				AC57565D243866BF002FCF9B /* ValidatesPassword.swift */,
 				ACEAFF352436AC5C00B976D4 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
@@ -334,10 +332,7 @@
 		ACEAFF2C2436A96D00B976D4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				ACEAFF312436AA3400B976D4 /* LoginViewController_1.swift */,
 				AC2CD82824380E4900B9D0A8 /* LoginViewController.swift */,
-				AC57565B243865D5002FCF9B /* ValidatesPhoneNumber.swift */,
-				AC57565D243866BF002FCF9B /* ValidatesPassword.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -345,7 +340,6 @@
 		ACEAFF2D2436A97600B976D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ACEAFF332436AB2B00B976D4 /* LoginViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -485,7 +479,6 @@
 				AC2CD8432438122D00B9D0A8 /* icon_life@2x.png in Resources */,
 				AC2CD84D2438122D00B9D0A8 /* mine@2x.png in Resources */,
 				AC51D2312431E19700EEC9D2 /* LaunchScreen.storyboard in Resources */,
-				ACEAFF342436AB2B00B976D4 /* LoginViewController.storyboard in Resources */,
 				AC2CD8472438122D00B9D0A8 /* student@2x.png in Resources */,
 				AC2CD8502438122D00B9D0A8 /* icon_live@2x.png in Resources */,
 				AC2CD8532438122D00B9D0A8 /* icon_column@2x.png in Resources */,
@@ -648,7 +641,6 @@
 			files = (
 				ACEAFF382436AFF000B976D4 /* LoginViewModelDelegate.swift in Sources */,
 				AC2CD82C243811A600B9D0A8 /* R.generated.swift in Sources */,
-				ACEAFF322436AA3400B976D4 /* LoginViewController_1.swift in Sources */,
 				AC2CD82224380BA000B9D0A8 /* BaseViewController.swift in Sources */,
 				AC51D2292431E19300EEC9D2 /* ViewController.swift in Sources */,
 				AC57565C243865D5002FCF9B /* ValidatesPhoneNumber.swift in Sources */,

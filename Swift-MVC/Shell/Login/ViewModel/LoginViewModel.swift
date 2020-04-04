@@ -9,28 +9,15 @@
 import Foundation
 import UIKit
 
-class LoginViewModel {
-    weak var `delegate`:LoginViewModelDelegate?
+class LoginViewModel : ValidatesPhoneNumber,ValidatesPassword {
+    weak var delegate:LoginViewModelDelegate?
     
-    private var usernameValid = false
-    private var passwordValid = false
-    private var userName: String?
-    private var password: String?
-    
-    func userNameDidChange(text:String?) -> Void {
-        guard let text = text else {
-            return
+    func loginAction(phoneTextField:UITextField,passwordTextField:UITextField) -> () {
+        if validatePhoneNumber(phoneTextField.text ?? "") && validatePassword(passwordTextField.text ?? "") {
+            print("name:\(String(describing: phoneTextField.text)), password:\(String(describing: passwordTextField.text))")
+        } else {
+            delegate?.showToast()
         }
-        if text.count < 6 {
-            usernameValid = false
-        }else{
-            usernameValid = true
-        }
-        userName = text
-        delegate?.reloadViews()
-    }
-    
-    func loginAction(usernameField:UITextField,passwordField:UITextField) -> () {
-        print("name:\(String(describing: usernameField.text)), password:\(String(describing: passwordField.text))")
+        
     }
 }

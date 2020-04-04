@@ -9,5 +9,5 @@
 import Foundation
 
 protocol LoginViewModelDelegate: class {
-    func reloadViews()
+    func showToast()
 }
