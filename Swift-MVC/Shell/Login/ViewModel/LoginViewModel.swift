@@ -15,8 +15,7 @@ class LoginViewModel : ValidatesPhoneNumber,ValidatesPassword {
     func loginAction(phoneTextField:UITextField,passwordTextField:UITextField) -> () {
         if let phoneTextFieldText = phoneTextField.text,
            let passwordTextFieldText = passwordTextField.text,
-            validatePhoneNumber(phoneTextFieldText) == true,
-            validatePassword(passwordTextFieldText) == true{
+            validatePhoneNumber(phoneTextFieldText)&&validatePassword(passwordTextFieldText){
             print("name:\(String(describing: phoneTextField.text)), password:\(String(describing: passwordTextField.text))")
             UIApplication.shared.delegate?.window??.rootViewController = TabBarController()
         } else {
