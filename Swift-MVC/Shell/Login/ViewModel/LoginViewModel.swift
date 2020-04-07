@@ -13,8 +13,12 @@ class LoginViewModel : ValidatesPhoneNumber,ValidatesPassword {
     weak var delegate:LoginViewModelDelegate?
     
     func loginAction(phoneTextField:UITextField,passwordTextField:UITextField) -> () {
-        if validatePhoneNumber(phoneTextField.text ?? "") && validatePassword(passwordTextField.text ?? "") {
+        if let phoneTextFieldText = phoneTextField.text,
+           let passwordTextFieldText = passwordTextField.text,
+            validatePhoneNumber(phoneTextFieldText) == true,
+            validatePassword(passwordTextFieldText) == true{
             print("name:\(String(describing: phoneTextField.text)), password:\(String(describing: passwordTextField.text))")
+            UIApplication.shared.delegate?.window??.rootViewController = TabBarController()
         } else {
             delegate?.showToast()
         }

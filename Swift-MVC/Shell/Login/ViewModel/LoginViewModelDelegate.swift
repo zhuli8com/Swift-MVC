@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol LoginViewModelDelegate: class {
+protocol LoginViewModelDelegate: AnyObject {
     func showToast()
 }

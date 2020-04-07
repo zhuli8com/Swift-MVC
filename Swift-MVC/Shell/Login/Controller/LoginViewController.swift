@@ -8,7 +8,7 @@
 
 class LoginViewController: BaseViewController, LoginViewModelDelegate {
     
-    lazy var loginViewModel: LoginViewModel = {
+    lazy private var loginViewModel: LoginViewModel = {
         let loginVM: LoginViewModel = LoginViewModel()
         loginVM.delegate = self
         return loginVM

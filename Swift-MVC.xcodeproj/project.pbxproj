@@ -44,6 +44,9 @@
 		AC51D25C2431E6C700EEC9D2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC51D25B2431E6C700EEC9D2 /* User.swift */; };
 		AC57565C243865D5002FCF9B /* ValidatesPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57565B243865D5002FCF9B /* ValidatesPhoneNumber.swift */; };
 		AC57565E243866BF002FCF9B /* ValidatesPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57565D243866BF002FCF9B /* ValidatesPassword.swift */; };
+		AC57566624387C8B002FCF9B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57566524387C8B002FCF9B /* TabBarController.swift */; };
+		AC57566924387CBD002FCF9B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57566824387CBD002FCF9B /* HomeViewController.swift */; };
+		AC57566C24387CE3002FCF9B /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57566B24387CE3002FCF9B /* MineViewController.swift */; };
 		ACEAFF362436AC5C00B976D4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEAFF352436AC5C00B976D4 /* LoginViewModel.swift */; };
 		ACEAFF382436AFF000B976D4 /* LoginViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEAFF372436AFF000B976D4 /* LoginViewModelDelegate.swift */; };
 		E8953D8A08E910147C4F997F /* Pods_Swift_MVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDA711B556568AD33469AF6 /* Pods_Swift_MVC.framework */; };
@@ -117,6 +120,9 @@
 		AC51D25B2431E6C700EEC9D2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AC57565B243865D5002FCF9B /* ValidatesPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatesPhoneNumber.swift; sourceTree = "<group>"; };
 		AC57565D243866BF002FCF9B /* ValidatesPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatesPassword.swift; sourceTree = "<group>"; };
+		AC57566524387C8B002FCF9B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		AC57566824387CBD002FCF9B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AC57566B24387CE3002FCF9B /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		ACEAFF352436AC5C00B976D4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		ACEAFF372436AFF000B976D4 /* LoginViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelDelegate.swift; sourceTree = "<group>"; };
 		F65D9DDD6AA78782AEC985CE /* Pods_Swift_MVC_Swift_MVCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_MVC_Swift_MVCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,11 +304,46 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		AC57565F24387BF2002FCF9B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AC57566724387CA1002FCF9B /* Controllers */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AC57566024387C0F002FCF9B /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				AC57566A24387CC6002FCF9B /* Controllers */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		AC57566724387CA1002FCF9B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC57566824387CBD002FCF9B /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AC57566A24387CC6002FCF9B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC57566B24387CE3002FCF9B /* MineViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		ACEAFF292436A94400B976D4 /* Shell */ = {
 			isa = PBXGroup;
 			children = (
+				AC57566024387C0F002FCF9B /* Mine */,
+				AC57565F24387BF2002FCF9B /* Home */,
 				ACEAFF2A2436A95100B976D4 /* Login */,
 				AC2CD82124380BA000B9D0A8 /* BaseViewController.swift */,
+				AC57566524387C8B002FCF9B /* TabBarController.swift */,
 			);
 			path = Shell;
 			sourceTree = "<group>";
@@ -642,6 +683,7 @@
 				ACEAFF382436AFF000B976D4 /* LoginViewModelDelegate.swift in Sources */,
 				AC2CD82C243811A600B9D0A8 /* R.generated.swift in Sources */,
 				AC2CD82224380BA000B9D0A8 /* BaseViewController.swift in Sources */,
+				AC57566624387C8B002FCF9B /* TabBarController.swift in Sources */,
 				AC51D2292431E19300EEC9D2 /* ViewController.swift in Sources */,
 				AC57565C243865D5002FCF9B /* ValidatesPhoneNumber.swift in Sources */,
 				AC51D2252431E19300EEC9D2 /* AppDelegate.swift in Sources */,
@@ -649,6 +691,8 @@
 				AC51D25C2431E6C700EEC9D2 /* User.swift in Sources */,
 				AC57565E243866BF002FCF9B /* ValidatesPassword.swift in Sources */,
 				AC51D25A2431E6B900EEC9D2 /* Repository.swift in Sources */,
+				AC57566924387CBD002FCF9B /* HomeViewController.swift in Sources */,
+				AC57566C24387CE3002FCF9B /* MineViewController.swift in Sources */,
 				ACEAFF362436AC5C00B976D4 /* LoginViewModel.swift in Sources */,
 				AC37BBBB2433DF3B00340BEA /* API.swift in Sources */,
 				AC2CD82924380E4900B9D0A8 /* LoginViewController.swift in Sources */,
