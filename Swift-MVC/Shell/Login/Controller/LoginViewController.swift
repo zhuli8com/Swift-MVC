@@ -97,6 +97,9 @@ class LoginViewController: BaseViewController, LoginViewModelDelegate {
     
     // MARK: - event response
     @objc func didClickLoginButton() {
+        Network<WebJSON>().requestJSON("http://www.starming.com/api.php?get=testjson") { jsonModel in
+            print(jsonModel)
+        }
         loginViewModel.loginAction(phoneTextField:phoneTextField,passwordTextField:passwordTextField)
     }
     
